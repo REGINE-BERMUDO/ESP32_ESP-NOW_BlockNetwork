@@ -1,45 +1,47 @@
 # ESP32 ESP-NOW Block Network
 
-Each ESP32 broadcasts a short message and records the unique MAC addresses
-of other matching boards it hears. No router or hotspot connection is used.
+This project lets the ESP32 boards in our block send messages to each other
+without a router or hotspot. Each board keeps a list of the unique MAC
+addresses it hears.
 
-## Current status
+## Progress
 
-The sketch passed Verify in Arduino IDE, as reported by Yestin Paraguya.
-Board-to-board operation and official results are pending the scheduled
-block session on **Wednesday, November 11, 2026**. The time window is
-still to be recorded.
+Yestin has verified the sketch in Arduino IDE. Communication between boards
+still needs to be tested during our block session on **Wednesday, November 11,
+2026**. The exact time has not been confirmed, and the results are still pending.
 
-## Shared sketch
+## Uploading the sketch
 
 [Open ESPNow_Block_Network.ino](firmware/ESPNow_Block_Network/ESPNow_Block_Network.ino)
 
-Open the sketch in Arduino IDE, select your ESP32 board and port, and upload.
-Open Serial Monitor at **115200 baud**.
+Open the sketch in Arduino IDE, choose your ESP32 board and port, then upload
+it. Set Serial Monitor to **115200 baud**.
 
-Before the session, the block must agree on the same sketch, message layout,
-`BLOCK_NAME`, and `RADIO_CHANNEL`. The current settings are `BLOCK-A` and
-channel `1`; these are defaults awaiting block agreement.
+Everyone in the block needs the same sketch, message layout, `BLOCK_NAME`,
+and `RADIO_CHANNEL`. The code currently uses `BLOCK-A` and channel `1`.
+We need to agree on these settings before the session.
 
-The sketch uses only libraries included with ESP32 Arduino board support
-3.x. It creates no custom tasks or queues. A short lock protects the MAC list
-shared by the receive callback and the main loop.
+All required libraries come with ESP32 Arduino board support 3.x.
+The sketch does not create tasks or queues. It uses a short lock so the
+receive callback and the main loop can safely share the MAC address list.
 
-## During the approved window
+## During our block session
 
-1. Use only your own board and stay within about five metres of the others.
-2. Restart once at the start to clear earlier counts.
-3. Keep the board powered for the full window. Do not connect it to Wi-Fi.
-4. Wait at least 30 seconds before recording the count and addresses.
-5. Capture a Serial Monitor screenshot and a 30-second screen video.
+1. Use your own board and keep it within about five metres of the others.
+2. Restart it once at the beginning to clear any earlier counts.
+3. Leave it powered on for the whole window without connecting it to Wi-Fi.
+4. Wait at least 30 seconds, then record the count and MAC addresses.
+5. Take a Serial Monitor screenshot and record a 30-second screen video.
 
-The displayed count excludes your own board and counts each other matching
-MAC only once since startup. It is a cumulative count, not a live presence count.
+Your own board is excluded from the count. Each matching board is counted
+once, even if it sends more messages. Its address stays in the list until
+you restart, so the count does not tell you how many boards are still nearby.
 
-## Individual evidence
+## Individual results
 
 [paraguya_yestin](paraguya_yestin/README.md)
 
-Each student adds only their own `lastname_firstname` folder at the top level.
-Do not edit or copy another student's evidence. All students in the block
-submit the same shared repository URL.
+Each student adds their evidence in their own `lastname_firstname` folder
+at the top level of this repository. Leave everyone else's folders alone
+and use results recorded by your own board. Everyone in the block submits
+this same repository link.

@@ -1,7 +1,8 @@
 # ESP-NOW Results
 
-Official results are pending the approved block window. Values below must
-come from my own board during that session.
+I will fill in these results using my own board during our approved block
+window. The session is scheduled for November 11, 2026; the exact time is
+still to be confirmed.
 
 | Item | My result |
 | :--- | :--- |
@@ -11,9 +12,11 @@ come from my own board during that session.
 | MAC addresses heard | Pending |
 | Date and time of the window | November 11, 2026; time pending confirmation |
 
-## Evidence to add after the session
+## Evidence
 
-- `serial-monitor.png`: my Serial Monitor screenshot showing my MAC, the count, and the MAC addresses heard.
-- `serial-monitor-30s.mp4`: my 30-second Serial Monitor recording during the same window.
+After the session, I will add:
 
-These evidence files have not been captured yet.
+- `serial-monitor.png`: a screenshot showing my board's MAC, the count, and all MAC addresses heard.
+- `serial-monitor-30s.mp4`: a 30-second recording of Serial Monitor during the same window.
+
+Neither file has been captured yet.
