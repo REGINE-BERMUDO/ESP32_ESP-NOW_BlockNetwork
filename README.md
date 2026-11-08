@@ -1,47 +1,47 @@
 # ESP32 ESP-NOW Block Network
 
-This project lets the ESP32 boards in our block send messages to each other
-without a router or hotspot. Each board keeps a list of the unique MAC
-addresses it hears.
+I am using an ESP32 to send messages to the other boards in my block
+without connecting to a router or hotspot. My board keeps a list of the
+unique MAC addresses it hears.
 
-## Progress
+## My progress
 
-Yestin has verified the sketch in Arduino IDE. Communication between boards
-still needs to be tested during our block session on **Wednesday, November 11,
-2026**. The exact time has not been confirmed, and the results are still pending.
+I have verified the sketch in Arduino IDE. I still need to test communication
+with the other boards during my block session on **Wednesday, November 11,
+2026**. The exact time has not been confirmed, so my results are still pending.
 
-## Uploading the sketch
+## Setting up my board
 
 [Open ESPNow_Block_Network.ino](firmware/ESPNow_Block_Network/ESPNow_Block_Network.ino)
 
-Open the sketch in Arduino IDE, choose your ESP32 board and port, then upload
-it. Set Serial Monitor to **115200 baud**.
+To upload the sketch, I open it in Arduino IDE, choose my ESP32 board and
+port, then click Upload. I set Serial Monitor to **115200 baud**.
 
-Everyone in the block needs the same sketch, message layout, `BLOCK_NAME`,
-and `RADIO_CHANNEL`. The code currently uses `BLOCK-A` and channel `1`.
-We need to agree on these settings before the session.
+My classmates and I need to use the same sketch, message layout, `BLOCK_NAME`,
+and `RADIO_CHANNEL`. My code currently uses `BLOCK-A` and channel `1`.
+I will confirm these settings with my block before the session.
 
-All required libraries come with ESP32 Arduino board support 3.x.
-The sketch does not create tasks or queues. It uses a short lock so the
+All the libraries I need come with ESP32 Arduino board support 3.x.
+My sketch does not create tasks or queues. It uses a short lock so the
 receive callback and the main loop can safely share the MAC address list.
 
-## During our block session
+## My plan for the block session
 
-1. Use your own board and keep it within about five metres of the others.
-2. Restart it once at the beginning to clear any earlier counts.
-3. Leave it powered on for the whole window without connecting it to Wi-Fi.
-4. Wait at least 30 seconds, then record the count and MAC addresses.
-5. Take a Serial Monitor screenshot and record a 30-second screen video.
+1. I will use my own board and keep it within about five metres of the others.
+2. I will restart it once at the beginning to clear any earlier counts.
+3. I will keep it powered on for the whole window without connecting it to Wi-Fi.
+4. I will wait at least 30 seconds, then record the count and MAC addresses.
+5. I will take a Serial Monitor screenshot and record a 30-second screen video.
 
-Your own board is excluded from the count. Each matching board is counted
-once, even if it sends more messages. Its address stays in the list until
-you restart, so the count does not tell you how many boards are still nearby.
+My board excludes itself from the count. It counts each matching board once,
+even if that board sends more messages. The addresses stay in the list until
+I restart my board, so the count shows all boards heard since startup.
+It does not tell me how many are still nearby.
 
-## Individual results
+## My results
 
 [paraguya_yestin](paraguya_yestin/README.md)
 
-Each student adds their evidence in their own `lastname_firstname` folder
-at the top level of this repository. Leave everyone else's folders alone
-and use results recorded by your own board. Everyone in the block submits
-this same repository link.
+I will put my evidence in my own `lastname_firstname` folder at the top level
+of this repository. I will use the results recorded by my board and leave
+my classmates' folders untouched. My block will submit this same repository link.

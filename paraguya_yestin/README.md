@@ -1,8 +1,8 @@
-# ESP-NOW Results
+# My ESP-NOW Results
 
-I will fill in these results using my own board during our approved block
-window. The session is scheduled for November 11, 2026; the exact time is
-still to be confirmed.
+I have verified my sketch in Arduino IDE. I will record the results from
+my own board during my approved block window on November 11, 2026.
+I am still waiting for confirmation of the exact time.
 
 | Item | My result |
 | :--- | :--- |
@@ -12,11 +12,11 @@ still to be confirmed.
 | MAC addresses heard | Pending |
 | Date and time of the window | November 11, 2026; time pending confirmation |
 
-## Evidence
+## My evidence
 
 After the session, I will add:
 
-- `serial-monitor.png`: a screenshot showing my board's MAC, the count, and all MAC addresses heard.
-- `serial-monitor-30s.mp4`: a 30-second recording of Serial Monitor during the same window.
+- `serial-monitor.png`: my screenshot showing my board's MAC, the count, and all MAC addresses heard.
+- `serial-monitor-30s.mp4`: my 30-second recording of Serial Monitor during the same window.
 
-Neither file has been captured yet.
+I have not captured either file yet.
