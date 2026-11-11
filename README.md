@@ -1,47 +1,106 @@
 # ESP32 ESP-NOW Block Network
 
-I am using an ESP32 to send messages to the other boards in my block
-without connecting to a router or hotspot. My board keeps a list of the
-unique MAC addresses it hears.
+This is the class repository for our ESP-NOW block activity. The shared
+sketch lets each ESP32 announce its owner's name and record the MAC addresses
+of other boards it hears, without joining a router or hotspot.
 
-## My progress
+Everyone uses this repository. **Each student's measurements must come from
+their own board during their own block's scheduled window.** A classmate's
+folder or name in this repository is not evidence that their board was heard.
 
-I have verified the sketch in Arduino IDE. I still need to test communication
-with the other boards during my block session on **Wednesday, November 11,
-2026**. The exact time has not been confirmed, so my results are still pending.
+## Before your block window
 
-## Setting up my board
+1. Install Arduino IDE and ESP32 board support. The sketch uses libraries
+   included with the board package; WiFiManager is not needed.
+2. Download the repository and open the
+   [shared sketch](firmware/ESPNow_Block_Network/ESPNow_Block_Network.ino).
+3. Change this line in your local copy to your own name:
 
-[Open ESPNow_Block_Network.ino](firmware/ESPNow_Block_Network/ESPNow_Block_Network.ino)
+   ```cpp
+   const char OWNER_NAME[] = "lastname_firstname";
+   ```
 
-To upload the sketch, I open it in Arduino IDE, choose my ESP32 board and
-port, then click Upload. I set Serial Monitor to **115200 baud**.
+   Use `lastname_firstname`, with no spaces and at most 31 characters.
+   The shared copy deliberately stops at startup until this name is changed.
+4. Keep `RADIO_CHANNEL = 1`, `MAGIC = 0xB10C2026`, and the message layout
+   unchanged. This version sends a 40-byte message containing the owner name.
+   The older 8-byte and 28-byte sketches are incompatible; everyone needs this version.
+5. Select your actual board and port. For a standard WROOM-32 development
+   board, select **ESP32 Dev Module**. For a generic S3 development board,
+   select **ESP32S3 Dev Module**; use the exact board profile if supplied by
+   its manufacturer. Native USB serial on the S3 may require **USB CDC On Boot**.
+6. Verify, upload, and open Serial Monitor at **115200 baud**. Check that
+   your name, your board's MAC, and channel `1` appear. Test with a classmate
+   before the official window. Testing alone may show zero boards.
 
-My classmates and I need to use the same sketch, message layout, `BLOCK_NAME`,
-and `RADIO_CHANNEL`. My code currently uses `BLOCK-A` and channel `1`.
-I will confirm these settings with my block before the session.
+Only `OWNER_NAME` differs between students' local sketches. Do not commit
+your local name change over the shared firmware. Submit your personal
+results folder instead; see [how to contribute](CONTRIBUTING.md).
 
-All the libraries I need come with ESP32 Arduino board support 3.x.
-My sketch does not create tasks or queues. It uses a short lock so the
-receive callback and the main loop can safely share the MAC address list.
+## During your block window
 
-## My plan for the block session
+1. Attend the room and time announced by the instructor. Use only your own board.
+2. Place it within about **five metres** of the other boards in your block.
+3. Restart once at the beginning to clear counts from earlier testing.
+4. Keep your board powered for the **full window**. Do not connect it to Wi-Fi.
+5. Wait at least **30 seconds**, then record your board's MAC, the number
+   of boards heard, and every MAC address in its results.
+6. Take a Serial Monitor screenshot with the count and MAC addresses visible.
+   Include your own MAC as well so the evidence identifies your board.
+7. Record a **30-second screen video** of Serial Monitor during that window.
+8. Write down the actual **date, start time, and end time** of your window.
+   The displayed running time is uptime, not the calendar date or clock time.
 
-1. I will use my own board and keep it within about five metres of the others.
-2. I will restart it once at the beginning to clear any earlier counts.
-3. I will keep it powered on for the whole window without connecting it to Wi-Fi.
-4. I will wait at least 30 seconds, then record the count and MAC addresses.
-5. I will take a Serial Monitor screenshot and record a 30-second screen video.
+The sketch counts unique other MAC addresses since startup, excludes its
+own MAC, and repeats the summary every five seconds. Repeated messages do
+not increase the count. A stored address remains after a board leaves range.
+Names are entered by owners and are optional extra information; **MAC
+addresses and actual results are required**. The sketch has no block-name
+filter, so follow the room and window rules when collecting results.
+If the list-full warning appears, the stored count is incomplete.
 
-My board excludes itself from the count. It counts each matching board once,
-even if that board sends more messages. The addresses stay in the list until
-I restart my board, so the count shows all boards heard since startup.
-It does not tell me how many are still nearby.
+## Your submission folder
 
-## My results
+Create your own `lastname_firstname` folder directly at the top level:
 
-[paraguya_yestin](paraguya_yestin/README.md)
+```text
+esp32_espnow_block_network/
+├── README.md
+├── CONTRIBUTING.md
+├── firmware/
+│   └── ESPNow_Block_Network/
+│       └── ESPNow_Block_Network.ino
+├── docs/
+│   └── student-readme-template.md
+└── lastname_firstname/          (replace with your own name)
+    ├── README.md
+    ├── serial-monitor.png
+    └── serial-monitor-30s.mp4
+```
 
-I will put my evidence in my own `lastname_firstname` folder at the top level
-of this repository. I will use the results recorded by my board and leave
-my classmates' folders untouched. My block will submit this same repository link.
+Copy the [student README template](docs/student-readme-template.md) into
+your folder and fill it with your own observations. Include:
+
+- Your name as `lastname_firstname`.
+- Your board's MAC address.
+- The number of other boards heard.
+- Every MAC address heard, including a written list in the README.
+- The actual date and time of your block window.
+- Your screenshot and 30-second recording from that window.
+
+[Yestin's results folder](paraguya_yestin/README.md) belongs to Yestin.
+It is not a template or shared evidence folder. Do not put another student's
+folder inside yours, edit another student's folder, or copy their results.
+A board absent from the room during the window does not count.
+
+Everyone in each block submits this same repository URL to the submission bin:
+
+https://github.com/xavieryyyyyy/esp32_espnow_block_network
+
+## Verification status
+
+The shared owner-name sketch compiled successfully for **ESP32 Dev Module**
+and **ESP32S3 Dev Module** (native USB CDC enabled), using the installed
+ESP32 Arduino core **3.3.12**. Compilation does not prove radio communication
+or attendance. Test this version between actual boards before recording
+official results. Pending personal results are not completed submissions.
