@@ -6,7 +6,8 @@ board package; WiFiManager is not needed.
 
 ## Download and personalize the sketch
 
-1. Download the class repository and open
+1. Open the class repository on GitHub, choose **Code → Download ZIP**, and
+   extract it on your computer. Open
    [ESPNow_Block_Network.ino](../firmware/ESPNow_Block_Network/ESPNow_Block_Network.ino).
 2. Change this line in your local copy:
 
@@ -49,4 +50,6 @@ The code compiled for ESP32 Dev Module and ESP32S3 Dev Module with native USB
 CDC enabled using ESP32 Arduino core 3.3.12. A successful compile does not
 prove that two physical boards can communicate. Check that before your window.
 
+If something fails, use [the troubleshooting guide](troubleshooting.md).
 Next: [collect your results during the block session](block-session.md).
+Return to [the class starting page](../README.md).

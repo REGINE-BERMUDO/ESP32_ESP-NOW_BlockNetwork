@@ -1,24 +1,34 @@
 # My ESP-NOW Results
 
-I will fill in this table using my own board during my approved block window.
-These results are still pending.
+Replace the pending fields with the results from your own board during your
+approved block window. Change the evidence filenames below to match your files.
+Remove this instruction paragraph before submitting.
 
 | Item | My result |
 | :--- | :--- |
 | Name (lastname_firstname) | lastname_firstname |
 | My board's MAC address | Pending |
 | Number of boards heard | Pending |
-| MAC addresses heard | Pending: list every MAC here, separated with `<br>` |
+| MAC addresses heard | List every address in the table below. |
 | Date and time of the window | Pending: actual date, start time, end time, and timezone |
 
-## My evidence
+## Boards my ESP32 heard
 
-I will add both files to this folder after collecting my results:
+I recorded these addresses from my own Serial Monitor output. Owner names
+are the labels sent by the other boards. The count excludes my own board.
 
-- `serial-monitor.png`: my screenshot showing my board's MAC, the count,
-  and every MAC address heard.
-- `serial-monitor-30s.mp4`: my 30-second screen recording of Serial Monitor
-  during the same window.
+| No. | Owner name shown (optional) | MAC address |
+| :--- | :--- | :--- |
+| Pending | Pending | Pending |
 
-I have not added the evidence yet. Owner names may be included alongside
-the required MAC addresses.
+Add one row per MAC address and remove the pending row. If your board heard
+no other boards, write `0` in the results table and state that no addresses
+were received. Do not copy another student's list.
+
+## My Serial Monitor screenshot
+
+![My board's Serial Monitor results](lastname_serialmonitor.png)
+
+## My screen recording
+
+[Watch my 30-second Serial Monitor recording](lastname_serialmonitor.mp4)

@@ -27,8 +27,12 @@ and window. A board absent from the room during that window does not count.
 
 | File | What it must show |
 | :--- | :--- |
-| `serial-monitor.png` | Serial Monitor with the count and every MAC heard visible. Include your own MAC so the board is identifiable. |
-| `serial-monitor-30s.mp4` | A 30-second screen recording of Serial Monitor during your block window. |
+| `lastname_serialmonitor.png` | Serial Monitor with the count and every MAC heard visible. Include your own MAC so the board is identifiable. |
+| `lastname_serialmonitor.mp4` | A 30-second screen recording of Serial Monitor during your block window. |
+
+Replace `lastname` with your surname. Keep each file's actual extension
+and make the README links match. If your recording is longer, keep the
+original and export a continuous 30-second copy for submission.
 
 Make the text readable. If the list is long, adjust the Serial Monitor view
 before taking the screenshot. The screenshot and video must come from your
@@ -41,12 +45,14 @@ Put these three files in your own top-level `lastname_firstname` folder:
 ```text
 lastname_firstname/
 ├── README.md
-├── serial-monitor.png
-└── serial-monitor-30s.mp4
+├── lastname_serialmonitor.png
+└── lastname_serialmonitor.mp4
 ```
 
 Copy the [README template](student-readme-template.md), fill in every result,
 and add your actual evidence. Do not put another student's folder inside
 yours or edit their files.
 
+Use [the results guide](read-results.md) when copying the count and addresses.
 Next: [submit your folder through a pull request](../CONTRIBUTING.md).
+Return to [the class starting page](../README.md).

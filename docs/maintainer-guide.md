@@ -15,6 +15,8 @@ Check the pull request's **Files changed** tab:
 - The screen recording is 30 seconds long and shows Serial Monitor.
 - The evidence and written results agree. Pending values are not a completed submission.
 - The shared firmware and other students' folders are unchanged.
+- Evidence filenames use the student's surname, with the real extension,
+  and both links open from the personal README.
 
 Ask the student for corrections in the pull request. They should update
 their own branch. Evidence review does not replace the instructor's decision
@@ -51,3 +53,8 @@ and [missing-contribution help](https://docs.github.com/en/account-and-profile/h
 Being credited as a contributor does not grant collaborator, write, or admin
 access. Add someone as a collaborator only when you intend to grant that
 permission; it is not needed just to accept their results pull request.
+
+The repository owner also uses a personal results branch and PR. They do
+not need to fork their own repository. See [the contribution guide](../CONTRIBUTING.md).
+
+Return to [the class starting page](../README.md).

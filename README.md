@@ -8,12 +8,23 @@ hears. The ESP32 does not join a router or hotspot.
 the results your board records there.** Everyone submits the same shared
 repository link after their own evidence has been merged.
 
+## Follow this order
+
+Prepare your board → attend your block window → capture your own results →
+add your folder in a PR → check the merge → submit the shared link.
+
+The `students` page is a directory. Each actual results folder stays at the
+repository's top level, as the assignment requires.
+
 ## Start here
 
 | What you need to do | Open this guide |
 | :--- | :--- |
 | Download the sketch and prepare your board | [Board setup](docs/board-setup.md) |
 | Follow the lab steps and capture evidence | [Block session](docs/block-session.md) |
+| Understand the count, owner names, and MAC list | [Read the results](docs/read-results.md) |
+| Fix common board, file, or GitHub problems | [Common problems](docs/troubleshooting.md) |
+| Understand the shared code | [Firmware walkthrough](firmware/README.md) |
 | Add your own folder through a pull request | [Submit your results](CONTRIBUTING.md) |
 | Find a student's results | [Student directory](students/README.md) |
 | Review and merge classmates' submissions | [Repository owner guide](docs/maintainer-guide.md) |
@@ -29,17 +40,20 @@ esp32_espnow_block_network/
 ├── docs/
 │   ├── board-setup.md
 │   ├── block-session.md
+│   ├── read-results.md
+│   ├── troubleshooting.md
 │   ├── student-readme-template.md
 │   └── maintainer-guide.md
 ├── firmware/
+│   ├── README.md                   Code walkthrough
 │   └── ESPNow_Block_Network/
 │       └── ESPNow_Block_Network.ino  One shared sketch
 ├── .github/
 │   └── PULL_REQUEST_TEMPLATE.md     Submission checklist
 └── lastname_firstname/             Each student adds their own folder by PR
     ├── README.md                   Their actual results
-    ├── serial-monitor.png          Their Serial Monitor screenshot
-    └── serial-monitor-30s.mp4       Their 30-second screen recording
+    ├── lastname_serialmonitor.png          Their Serial Monitor screenshot
+    └── lastname_serialmonitor.mp4       Their 30-second screen recording
 ```
 
 Each student, including the repository owner, creates their own
@@ -47,6 +61,10 @@ Each student, including the repository owner, creates their own
 requires these folders at the **top level**. The `students` folder is a
 directory of links; evidence belongs in the student's own top-level folder.
 The folder above is an example of what students will add, not a pre-created submission.
+
+Use your surname in both evidence filenames: `lastname_serialmonitor.png`
+and `lastname_serialmonitor.mp4`. Keep each file's real extension and make
+the links in your README match. The video must be a 30-second screen recording.
 
 Every personal folder contains three files: a completed README, a Serial
 Monitor screenshot, and a 30-second screen recording. Copy the

@@ -16,3 +16,10 @@ Personal folders stay at the top level, as required by the activity.
 Follow [the submission guide](../CONTRIBUTING.md) to add your own results,
 and read [the block-session instructions](../docs/block-session.md) before
 collecting evidence.
+
+Each linked folder contains the student's completed README,
+`lastname_serialmonitor.png`, and `lastname_serialmonitor.mp4`, using their
+own surname and actual file extensions. The directory itself contains no
+student evidence or attendance count.
+
+Return to [the class starting page](../README.md).
