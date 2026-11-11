@@ -43,4 +43,4 @@ The screenshot shows 15 boards heard at 4:08:51 PM, after 4,346 seconds of runti
 
 [Watch the Serial Monitor recording](castor_serialmonitor.mp4)
 
-Recorded at 4:09 PM during the same window. The recording is 54.10 seconds long and shows the Serial Monitor results updating.
+Continuous 30-second clip from the recording captured at 4:09 PM during the same window. The full 54-second original is kept separately.
