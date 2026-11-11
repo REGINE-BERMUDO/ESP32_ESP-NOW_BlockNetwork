@@ -14,7 +14,7 @@ board package; WiFiManager is not needed.
    const char OWNER_NAME[] = "lastname_firstname";
    ```
 
-   Enter your own name, such as `paraguya_yestin`. Use no spaces and at most
+   Enter your own name, such as `cruz_juan`. Use no spaces and at most
    31 characters. The shared sketch stops at startup if the placeholder is left in place.
 3. Keep `RADIO_CHANNEL = 1`, `MAGIC = 0xB10C2026`, and the message layout
    unchanged. Everyone testing together needs this same 40-byte owner-name version.

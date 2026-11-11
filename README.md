@@ -36,15 +36,17 @@ esp32_espnow_block_network/
 │       └── ESPNow_Block_Network.ino  One shared sketch
 ├── .github/
 │   └── PULL_REQUEST_TEMPLATE.md     Submission checklist
-└── paraguya_yestin/
-    ├── README.md                   Yestin's results
-    ├── serial-monitor.png          Add after the session
-    └── serial-monitor-30s.mp4       Add after the session
+└── lastname_firstname/             Each student adds their own folder by PR
+    ├── README.md                   Their actual results
+    ├── serial-monitor.png          Their Serial Monitor screenshot
+    └── serial-monitor-30s.mp4       Their 30-second screen recording
 ```
 
-Each student creates another `lastname_firstname` folder beside
-`paraguya_yestin`. The activity requires these folders at the **top level**,
-so the `students` folder is a directory of links, not a place to move evidence.
+Each student, including the repository owner, creates their own
+`lastname_firstname` folder through a results pull request. The activity
+requires these folders at the **top level**. The `students` folder is a
+directory of links; evidence belongs in the student's own top-level folder.
+The folder above is an example of what students will add, not a pre-created submission.
 
 Every personal folder contains three files: a completed README, a Serial
 Monitor screenshot, and a 30-second screen recording. Copy the
