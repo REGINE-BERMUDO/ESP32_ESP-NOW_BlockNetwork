@@ -1,25 +1,24 @@
 # My ESP-NOW Results
 
-Copy this file to your own top-level `lastname_firstname/README.md`.
-Replace the name below and complete the results using only your own board's
-observations during your approved block window.
+I will fill in this table using my own board during my approved block window.
+These results are still pending.
 
 | Item | My result |
 | :--- | :--- |
 | Name (lastname_firstname) | lastname_firstname |
 | My board's MAC address | Pending |
 | Number of boards heard | Pending |
-| MAC addresses heard | Pending: list every MAC here, one per line using `<br>` |
+| MAC addresses heard | Pending: list every MAC here, separated with `<br>` |
 | Date and time of the window | Pending: actual date, start time, end time, and timezone |
 
 ## My evidence
 
-Add both files to this same folder after the session:
+I will add both files to this folder after collecting my results:
 
 - `serial-monitor.png`: my screenshot showing my board's MAC, the count,
-  and all MAC addresses heard.
+  and every MAC address heard.
 - `serial-monitor-30s.mp4`: my 30-second screen recording of Serial Monitor
-  during the block window.
+  during the same window.
 
-These results remain pending until I fill in the table and add my actual
-evidence. Owner names may be included alongside the required MAC addresses.
+I have not added the evidence yet. Owner names may be included alongside
+the required MAC addresses.

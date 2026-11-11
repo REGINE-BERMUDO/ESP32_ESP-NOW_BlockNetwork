@@ -1,106 +1,80 @@
-# ESP32 ESP-NOW Block Network
+# ESP32 ESP-NOW Class Repository
 
-This is the class repository for our ESP-NOW block activity. The shared
-sketch lets each ESP32 announce its owner's name and record the MAC addresses
-of other boards it hears, without joining a router or hotspot.
+Our class uses this repository for the ESP-NOW block activity. Each board
+sends its owner's name and records the MAC addresses of other boards it
+hears. The ESP32 does not join a router or hotspot.
 
-Everyone uses this repository. **Each student's measurements must come from
-their own board during their own block's scheduled window.** A classmate's
-folder or name in this repository is not evidence that their board was heard.
+**Use your own board, attend your block's approved window, and submit only
+the results your board records there.** Everyone submits the same shared
+repository link after their own evidence has been merged.
 
-## Before your block window
+## Start here
 
-1. Install Arduino IDE and ESP32 board support. The sketch uses libraries
-   included with the board package; WiFiManager is not needed.
-2. Download the repository and open the
-   [shared sketch](firmware/ESPNow_Block_Network/ESPNow_Block_Network.ino).
-3. Change this line in your local copy to your own name:
+| What you need to do | Open this guide |
+| :--- | :--- |
+| Download the sketch and prepare your board | [Board setup](docs/board-setup.md) |
+| Follow the lab steps and capture evidence | [Block session](docs/block-session.md) |
+| Add your own folder through a pull request | [Submit your results](CONTRIBUTING.md) |
+| Find a student's results | [Student directory](students/README.md) |
+| Review and merge classmates' submissions | [Repository owner guide](docs/maintainer-guide.md) |
 
-   ```cpp
-   const char OWNER_NAME[] = "lastname_firstname";
-   ```
-
-   Use `lastname_firstname`, with no spaces and at most 31 characters.
-   The shared copy deliberately stops at startup until this name is changed.
-4. Keep `RADIO_CHANNEL = 1`, `MAGIC = 0xB10C2026`, and the message layout
-   unchanged. This version sends a 40-byte message containing the owner name.
-   The older 8-byte and 28-byte sketches are incompatible; everyone needs this version.
-5. Select your actual board and port. For a standard WROOM-32 development
-   board, select **ESP32 Dev Module**. For a generic S3 development board,
-   select **ESP32S3 Dev Module**; use the exact board profile if supplied by
-   its manufacturer. Native USB serial on the S3 may require **USB CDC On Boot**.
-6. Verify, upload, and open Serial Monitor at **115200 baud**. Check that
-   your name, your board's MAC, and channel `1` appear. Test with a classmate
-   before the official window. Testing alone may show zero boards.
-
-Only `OWNER_NAME` differs between students' local sketches. Do not commit
-your local name change over the shared firmware. Submit your personal
-results folder instead; see [how to contribute](CONTRIBUTING.md).
-
-## During your block window
-
-1. Attend the room and time announced by the instructor. Use only your own board.
-2. Place it within about **five metres** of the other boards in your block.
-3. Restart once at the beginning to clear counts from earlier testing.
-4. Keep your board powered for the **full window**. Do not connect it to Wi-Fi.
-5. Wait at least **30 seconds**, then record your board's MAC, the number
-   of boards heard, and every MAC address in its results.
-6. Take a Serial Monitor screenshot with the count and MAC addresses visible.
-   Include your own MAC as well so the evidence identifies your board.
-7. Record a **30-second screen video** of Serial Monitor during that window.
-8. Write down the actual **date, start time, and end time** of your window.
-   The displayed running time is uptime, not the calendar date or clock time.
-
-The sketch counts unique other MAC addresses since startup, excludes its
-own MAC, and repeats the summary every five seconds. Repeated messages do
-not increase the count. A stored address remains after a board leaves range.
-Names are entered by owners and are optional extra information; **MAC
-addresses and actual results are required**. The sketch has no block-name
-filter, so follow the room and window rules when collecting results.
-If the list-full warning appears, the stored count is incomplete.
-
-## Your submission folder
-
-Create your own `lastname_firstname` folder directly at the top level:
+## How the folders work
 
 ```text
 esp32_espnow_block_network/
-├── README.md
-├── CONTRIBUTING.md
+├── README.md                       Class starting page
+├── CONTRIBUTING.md                 How to submit a pull request
+├── students/
+│   └── README.md                    Directory linking to student folders
+├── docs/
+│   ├── board-setup.md
+│   ├── block-session.md
+│   ├── student-readme-template.md
+│   └── maintainer-guide.md
 ├── firmware/
 │   └── ESPNow_Block_Network/
-│       └── ESPNow_Block_Network.ino
-├── docs/
-│   └── student-readme-template.md
-└── lastname_firstname/          (replace with your own name)
-    ├── README.md
-    ├── serial-monitor.png
-    └── serial-monitor-30s.mp4
+│       └── ESPNow_Block_Network.ino  One shared sketch
+├── .github/
+│   └── PULL_REQUEST_TEMPLATE.md     Submission checklist
+└── paraguya_yestin/
+    ├── README.md                   Yestin's results
+    ├── serial-monitor.png          Add after the session
+    └── serial-monitor-30s.mp4       Add after the session
 ```
 
-Copy the [student README template](docs/student-readme-template.md) into
-your folder and fill it with your own observations. Include:
+Each student creates another `lastname_firstname` folder beside
+`paraguya_yestin`. The activity requires these folders at the **top level**,
+so the `students` folder is a directory of links, not a place to move evidence.
 
-- Your name as `lastname_firstname`.
-- Your board's MAC address.
-- The number of other boards heard.
-- Every MAC address heard, including a written list in the README.
-- The actual date and time of your block window.
-- Your screenshot and 30-second recording from that window.
+Every personal folder contains three files: a completed README, a Serial
+Monitor screenshot, and a 30-second screen recording. Copy the
+[README template](docs/student-readme-template.md) to begin. Never copy
+someone else's results or edit their folder.
 
-[Yestin's results folder](paraguya_yestin/README.md) belongs to Yestin.
-It is not a template or shared evidence folder. Do not put another student's
-folder inside yours, edit another student's folder, or copy their results.
-A board absent from the room during the window does not count.
+## Shared sketch
 
-Everyone in each block submits this same repository URL to the submission bin:
+[Open ESPNow_Block_Network.ino](firmware/ESPNow_Block_Network/ESPNow_Block_Network.ino)
+
+Change only `OWNER_NAME` in your local copy. Keep channel `1`,
+`MAGIC = 0xB10C2026`, and the 40-byte message layout the same across the block.
+The older 8-byte and 28-byte versions cannot exchange results with this version.
+
+The sketch counts unique other MAC addresses since startup. It excludes
+your own board, keeps previously heard addresses until restart, and prints
+the summary every five seconds. Names are entered by owners; MAC addresses
+are taken from received packets. Names are optional extras in the submission.
+There is no block-name filter, so follow the room and window rules.
+
+## Current checks
+
+The owner-name sketch compiled for ESP32 Dev Module and ESP32S3 Dev Module
+(native USB CDC enabled) with ESP32 Arduino core 3.3.12. This confirms compilation
+only. Each student still needs to test their board and collect their own evidence.
+Pending results are not completed submissions.
+
+## Shared submission link
 
 https://github.com/xavieryyyyyy/esp32_espnow_block_network
 
-## Verification status
-
-The shared owner-name sketch compiled successfully for **ESP32 Dev Module**
-and **ESP32S3 Dev Module** (native USB CDC enabled), using the installed
-ESP32 Arduino core **3.3.12**. Compilation does not prove radio communication
-or attendance. Test this version between actual boards before recording
-official results. Pending personal results are not completed submissions.
+Submit this URL, not your fork or pull request. First check that your folder
+and both evidence files are present in the shared repository.
