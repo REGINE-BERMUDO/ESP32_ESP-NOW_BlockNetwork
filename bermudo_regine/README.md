@@ -40,4 +40,5 @@ My ESP32 successfully detected 15 other ESP32 boards through ESP-NOW.
 
 ## 30-Second Serial Monitor Video
 
-[bermudo_SerialMonitor.mp4](bermudo_serialmonitor.mp4)
+https://github.com/user-attachments/assets/9e1c5f7d-0c00-4e48-8fba-7a6c1c2cd271
+
