@@ -47,4 +47,6 @@ captured it, which is beyond the required 30-second wait.
 
 ## My screen recording
 
+https://github.com/user-attachments/assets/8999cd27-8041-407f-8530-e28e6bf9e773
+
 [Watch my Serial Monitor recording](paraguya_serialmonitor.mp4)
